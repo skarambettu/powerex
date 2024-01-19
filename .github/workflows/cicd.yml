@@ -36,6 +36,8 @@ jobs:
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
           CLIENT_ID     = "${{ secrets.CLIENT_ID }}"
           CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}"
+          kafka_api_key = "${{ secrets.KAFKA_API_KEY }}"
+          kafka_api_secret = "${{ secrets.KAFKA_API_SECRET }}"
           EOF
           cat qut.terraform.tfvars
       - name: Terraform Plan
