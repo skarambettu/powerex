@@ -28,16 +28,6 @@ variable "confluent_kafka_cluster" {
   type        = string
 }
 
-variable "subscription_id" {
-  description = "Subscription Id"
-  type        = string
-}
-
-variable "tenant_id" {
-  description = "Tenant Id"
-  type        = string
-}
-
 variable "kafka_api_key" {
   description = "Kafka API Key"
   type        = string
