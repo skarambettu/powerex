@@ -4,6 +4,12 @@ name: CI/CD with Terraform
 on:
   push:
     branches: [ "main" ]
+
+env:
+  ARM_CLIENT_ID: "${ secrets.CLIENT_ID }"
+  ARM_CLIENT_SECRET: "${ secrets.CLIENT_SECRET }"
+  ARM_TENANT_ID: "${ secrets.TENANT_ID }"
+  ARM_SUBSCRIPTION_ID: "${ secrets.SUBSCRIPTION_ID }"
   
 jobs:
   deploy-infra:
@@ -27,8 +33,6 @@ jobs:
           cat > qut.terraform.tfvars <<EOF
           confluent_cloud_api_key = "${{ secrets.CONFLUENT_CLOUD_API_KEY }}"
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
-          CLIENT_ID     = "${{ secrets.CLIENT_ID }}"
-          CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}"
           kafka_api_key = "${{ secrets.KAFKA_API_KEY }}"
           kafka_api_secret = "${{ secrets.KAFKA_API_SECRET }}"
           EOF
